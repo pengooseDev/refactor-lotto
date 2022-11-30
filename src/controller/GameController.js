@@ -31,7 +31,14 @@ class GameController {
     this.#model.buyTickets(userInput);
     const tickets = this.#model.getTickets();
     this.#view.printTickets(tickets);
+    this.getLottoInput();
   }
+
+  inputLottoNumber() {
+    this.#view.readLottoNumber(this.checkLottoValidation.bind(this));
+  }
+
+  checkLottoValidation() {}
 }
 
 module.exports = GameController;

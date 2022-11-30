@@ -11,6 +11,10 @@ class View {
     this.#inputView.readMoneyInput(callback);
   }
 
+  readLottoNumber(callback) {
+    this.#inputView.readLottoNumber(callback);
+  }
+
   printError(error) {
     this.#outputView.printError(error);
   }

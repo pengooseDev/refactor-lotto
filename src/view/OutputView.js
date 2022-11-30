@@ -8,7 +8,7 @@ const OutputView = {
   },
 
   printTickets(tickets) {
-    tickets.map((ticket) => {
+    tickets.forEach((ticket) => {
       const stringTicket = ticketStringParser(ticket);
       Console.print(stringTicket);
     });

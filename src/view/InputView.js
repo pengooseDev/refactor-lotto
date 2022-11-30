@@ -3,7 +3,13 @@ const { MESSAGE } = require('../utils/constants');
 
 const InputView = {
   readMoneyInput(callback) {
-    Console.readLine(MESSAGE.INPUT, (userInput) => {
+    Console.readLine(MESSAGE.MONEY_INPUT, (userInput) => {
+      callback(userInput);
+    });
+  },
+
+  readLottoNumber(callback) {
+    Console.readLine(MESSAGE.GET_WIN_NUMBER, (userInput) => {
       callback(userInput);
     });
   },
