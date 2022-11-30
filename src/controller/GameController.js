@@ -11,15 +11,25 @@ class GameController {
   }
 
   startGame() {
+    this.getMoneyInput();
+  }
+
+  getMoneyInput() {
     this.#view.readMoneyInput(this.checkMoneyValidation.bind(this));
   }
 
   checkMoneyValidation(userInput) {
     try {
       isValidMoney(userInput);
+      this.buyLotto(userInput);
     } catch (error) {
       this.#view.printError(error);
+      this.getMoneyInput();
     }
+  }
+
+  buyLotto(userInput) {
+    console.log(userInput);
   }
 }
 
