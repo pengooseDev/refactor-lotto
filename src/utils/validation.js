@@ -39,9 +39,15 @@ const isValidLength = (userInput) => {
   throw new Error(ERROR.INVALID_LOTTO_LENGTH);
 };
 
+const isAllNumbers = (userInput) => {
+  const userInputArray = userInput.split(TICKET.COMMA);
+  userInputArray.forEach((string) => isNumber(string));
+};
+
 const isValidLottoNumber = (userInput) => {
   isIncludeComma(userInput);
   isValidLength(userInput);
+  isAllNumbers(userInput);
 };
 
 module.exports = { isValidMoney, isValidLottoNumber };
