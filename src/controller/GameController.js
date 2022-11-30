@@ -50,6 +50,15 @@ class GameController {
 
   createLotto(userInput) {
     this.#model.createLotto(userInput);
+    this.readBonusNumber();
+  }
+
+  readBonusNumber() {
+    this.#view.readBounusNumber(this.checkBonusValidation.bind(this));
+  }
+
+  checkBonusValidation(userInput) {
+    console.log(userInput);
   }
 }
 

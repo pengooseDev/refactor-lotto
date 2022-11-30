@@ -15,6 +15,10 @@ class View {
     this.#inputView.readLottoNumber(callback);
   }
 
+  readBonusNumber(callback) {
+    this.#inputView.readBonusNumber(callback);
+  }
+
   printError(error) {
     this.#outputView.printError(error);
   }
