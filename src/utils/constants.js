@@ -21,6 +21,7 @@ const ERROR = Object.freeze({
   MIN_PURCHASE: '[ERROR] 로또는 최소 하나 이상 구매해야 합니다.',
   NOT_INCLUDE_COMMA: '[ERROR] 당첨 번호는 쉼표로 구분해야 합니다.',
   INVALID_LOTTO_LENGTH: '[ERROR] 당첨 번호는 여섯자리로 구성되어야 합니다.',
+  INVALID_LOTTO_RANGE: '[ERROR] 당첨 번호는 1이상 45이하의 숫자여야 합니다.',
 });
 
 const TICKET = Object.freeze({

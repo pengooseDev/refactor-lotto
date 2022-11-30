@@ -34,7 +34,7 @@ const isIncludeComma = (userInput) => {
 };
 
 const isValidLength = (userInput) => {
-  if (userInput.split(TICKET.COMMA).length === 6) return;
+  if (userInput.split(TICKET.COMMA).length === NUMBER.LOTTO_LENGTH) return;
 
   throw new Error(ERROR.INVALID_LOTTO_LENGTH);
 };
@@ -44,10 +44,17 @@ const isAllNumbers = (userInput) => {
   userInputArray.forEach((string) => isNumber(string));
 };
 
+const isValidRange = (userInput) => {
+  if (Number(userInput) >= 1 && Number(userInput) <= 45) return;
+
+  throw new Error(ERROR.INVALID_LOTTO_RANGE);
+};
+
 const isValidLottoNumber = (userInput) => {
   isIncludeComma(userInput);
   isValidLength(userInput);
   isAllNumbers(userInput);
+  isValidRange(userInput);
 };
 
 module.exports = { isValidMoney, isValidLottoNumber };
