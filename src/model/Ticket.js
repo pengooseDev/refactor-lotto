@@ -1,14 +1,26 @@
 const { Random } = require('@woowacourse/mission-utils');
+const { NUMBER } = require('../utils/constants');
 
 class Ticket {
   #tickets = [];
 
   getAmount(money) {
-    return Number(money) / 1000;
+    return Number(money) / NUMBER.UNIT;
+  }
+
+  addTicket(amount) {
+    while (this.#tickets.length < amount) {
+      const ticket = this.createTicket();
+      this.#tickets.push(ticket);
+    }
   }
 
   createTicket() {
-    Random.pickUniqueNumbersInRange(1, 45, 6);
+    return Random.pickUniqueNumbersInRange(
+      NUMBER.LOTTO_RANGE_MIN,
+      NUMBER.LOTTO_RANGE_MAX,
+      NUMBER.LOTTO_LENGTH,
+    );
   }
 }
 

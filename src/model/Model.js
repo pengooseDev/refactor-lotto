@@ -9,7 +9,7 @@ class Model {
 
   buyTickets(money) {
     const amount = this.#ticket.getAmount(money);
-    this.#ticket.createTicket(amount);
+    this.#ticket.addTicket(amount);
   }
 }
 

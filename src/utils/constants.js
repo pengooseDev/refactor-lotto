@@ -9,6 +9,9 @@ const REGEX = Object.freeze({
 const NUMBER = Object.freeze({
   ZERO: 0,
   UNIT: 1000,
+  LOTTO_RANGE_MIN: 1,
+  LOTTO_RANGE_MAX: 45,
+  LOTTO_LENGTH: 6,
 });
 
 const ERROR = Object.freeze({
