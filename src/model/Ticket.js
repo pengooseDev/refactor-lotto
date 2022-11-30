@@ -22,6 +22,10 @@ class Ticket {
       NUMBER.LOTTO_LENGTH,
     );
   }
+
+  getTickets() {
+    return this.#tickets;
+  }
 }
 
 module.exports = Ticket;

@@ -11,6 +11,10 @@ class Model {
     const amount = this.#ticket.getAmount(money);
     this.#ticket.addTicket(amount);
   }
+
+  getTickets() {
+    return this.#ticket.getTickets();
+  }
 }
 
 module.exports = Model;

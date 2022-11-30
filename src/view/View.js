@@ -14,6 +14,10 @@ class View {
   printError(error) {
     this.#outputView.printError(error);
   }
+
+  printTickets(tickets) {
+    this.#outputView.printTickets(tickets);
+  }
 }
 
 module.exports = View;

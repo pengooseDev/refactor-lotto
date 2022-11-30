@@ -20,4 +20,9 @@ const ERROR = Object.freeze({
   MIN_PURCHASE: '[ERROR] 로또는 최소 하나 이상 구매해야 합니다.',
 });
 
-module.exports = { MESSAGE, REGEX, NUMBER, ERROR };
+const TICKET = Object.freeze({
+  FORM: (ticket) => `[${ticket.join(', ')}]`,
+  AMOUNT: (tickets) => `${tickets.length}개를 구매했습니다.`,
+});
+
+module.exports = { MESSAGE, REGEX, NUMBER, ERROR, TICKET };

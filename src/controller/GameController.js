@@ -29,6 +29,8 @@ class GameController {
 
   buyLotto(userInput) {
     this.#model.buyTickets(userInput);
+    const tickets = this.#model.getTickets();
+    this.#view.printTickets(tickets);
   }
 }
 
