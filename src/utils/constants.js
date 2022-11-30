@@ -19,9 +19,11 @@ const ERROR = Object.freeze({
   NOT_A_NUMBER: '[ERROR] 숫자가 아닌 값은 입력할 수 없습니다.',
   INVALID_UNIT: '[ERROR] 구매 단위는 1,000원 입니다.',
   MIN_PURCHASE: '[ERROR] 로또는 최소 하나 이상 구매해야 합니다.',
+  NOT_INCLUDE_COMMA: '[ERROR] 당첨 번호는 쉼표로 구분해야 합니다.',
 });
 
 const TICKET = Object.freeze({
+  COMMA: ',',
   FORM: (ticket) => `[${ticket.join(', ')}]`,
   AMOUNT: (tickets) => `${tickets.length}개를 구매했습니다.`,
 });

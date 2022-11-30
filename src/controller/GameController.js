@@ -38,7 +38,11 @@ class GameController {
     this.#view.readLottoNumber(this.checkLottoValidation.bind(this));
   }
 
-  checkLottoValidation() {}
+  checkLottoValidation(userInput) {
+    try {
+      isValidLottoNumber(userInput);
+    } catch (error) {}
+  }
 }
 
 module.exports = GameController;

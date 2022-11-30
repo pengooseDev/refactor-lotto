@@ -1,5 +1,6 @@
-const { ERROR, REGEX, NUMBER } = require('./constants');
+const { ERROR, REGEX, NUMBER, TICKET } = require('./constants');
 
+/* Money Validation */
 const isNumber = (userInput) => {
   const numberRegex = REGEX.NUMBER;
   if (userInput.match(numberRegex)) return true;
@@ -25,4 +26,15 @@ const isValidMoney = (userInput) => {
   isValidUnit(userInput);
 };
 
-module.exports = { isValidMoney };
+/* Lotto Number Validation */
+const isIncludeComma = (userInput) => {
+  if (userInput.includes(TICKET.COMMA)) return;
+
+  throw new Error(ERROR.NOT_INCLUDE_COMMA);
+};
+
+const isValidLottoNumber = (userInput) => {
+  isIncludeComma(userInput);
+};
+
+module.exports = { isValidMoney, isValidLottoNumber };
