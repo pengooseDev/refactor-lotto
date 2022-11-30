@@ -2,6 +2,7 @@ const Lotto = require('./Lotto');
 
 class Model {
   #ticket;
+  #Lotto;
 
   constructor(ticket) {
     this.#ticket = ticket;
@@ -14,6 +15,12 @@ class Model {
 
   getTickets() {
     return this.#ticket.getTickets();
+  }
+
+  createLotto(userInput) {
+    const lottoNumber = userInput.split(',').map((string) => Number(string));
+    console.log(lottoNumber);
+    this.#Lotto = new Lotto(userInput);
   }
 }
 

@@ -41,13 +41,20 @@ const isValidLength = (userInput) => {
 
 const isAllNumbers = (userInput) => {
   const userInputArray = userInput.split(TICKET.COMMA);
-  userInputArray.forEach((string) => isNumber(string));
+
+  userInputArray.forEach((string) => {
+    isNumber(string);
+  });
 };
 
 const isValidRange = (userInput) => {
-  if (Number(userInput) >= 1 && Number(userInput) <= 45) return;
+  const userInputArray = userInput.split(TICKET.COMMA);
+  userInputArray.forEach((inputValue) => {
+    const inputNumber = Number(inputValue);
+    if (inputNumber >= NUMBER.LOTTO_RANGE_MIN && inputNumber <= NUMBER.LOTTO_RANGE_MAX) return;
 
-  throw new Error(ERROR.INVALID_LOTTO_RANGE);
+    throw new Error(ERROR.INVALID_LOTTO_RANGE);
+  });
 };
 
 const isValidLottoNumber = (userInput) => {

@@ -1,4 +1,4 @@
-const { isValidMoney } = require('../utils/validation');
+const { isValidMoney, isValidLottoNumber } = require('../utils/validation');
 
 class GameController {
   #model;
@@ -31,7 +31,7 @@ class GameController {
     this.#model.buyTickets(userInput);
     const tickets = this.#model.getTickets();
     this.#view.printTickets(tickets);
-    this.getLottoInput();
+    this.inputLottoNumber();
   }
 
   inputLottoNumber() {
@@ -41,7 +41,15 @@ class GameController {
   checkLottoValidation(userInput) {
     try {
       isValidLottoNumber(userInput);
-    } catch (error) {}
+      this.createLotto(userInput);
+    } catch (error) {
+      this.#view.printError(error);
+      this.inputLottoNumber();
+    }
+  }
+
+  createLotto(userInput) {
+    this.#model.createLotto(userInput);
   }
 }
 

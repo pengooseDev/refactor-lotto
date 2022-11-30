@@ -20,6 +20,7 @@ class View {
   }
 
   printTickets(tickets) {
+    this.#outputView.printTicketsAmount(tickets);
     this.#outputView.printTickets(tickets);
   }
 }
