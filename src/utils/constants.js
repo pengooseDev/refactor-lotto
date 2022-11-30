@@ -6,8 +6,15 @@ const REGEX = Object.freeze({
   NUMBER: /^\d+$/g,
 });
 
-const ERROR = Object.freeze({
-  NOT_A_NUMBER: '[ERROR] 숫자가 아닌 값은 입력할 수 없습니다.',
+const NUMBER = Object.freeze({
+  ZERO: 0,
+  UNIT: 1000,
 });
 
-module.exports = { MESSAGE, REGEX, ERROR };
+const ERROR = Object.freeze({
+  NOT_A_NUMBER: '[ERROR] 숫자가 아닌 값은 입력할 수 없습니다.',
+  INVALID_UNIT: '[ERROR] 구매 단위는 1,000원 입니다.',
+  MIN_PURCHASE: '[ERROR] 로또는 최소 하나 이상 구매해야 합니다.',
+});
+
+module.exports = { MESSAGE, REGEX, NUMBER, ERROR };

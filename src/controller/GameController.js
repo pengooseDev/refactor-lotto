@@ -1,4 +1,5 @@
 const { Console } = require('@woowacourse/mission-utils');
+const { isValidMoney } = require('../utils/validation');
 
 class GameController {
   #model;
