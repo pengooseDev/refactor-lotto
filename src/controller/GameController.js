@@ -1,4 +1,3 @@
-const { Console } = require('@woowacourse/mission-utils');
 const { isValidMoney } = require('../utils/validation');
 
 class GameController {
@@ -29,7 +28,7 @@ class GameController {
   }
 
   buyLotto(userInput) {
-    console.log(userInput);
+    this.#model.buyTickets(userInput);
   }
 }
 

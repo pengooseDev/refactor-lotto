@@ -1,10 +1,12 @@
 const GameController = require('./controller/GameController');
+const Model = require('./model/Model');
+const Ticket = require('./model/Ticket');
 const View = require('./view/View');
 const InputView = require('./view/InputView');
 const OutputView = require('./view/OutputView');
 
 class App {
-  #model;
+  #model = new Model(new Ticket());
   #view = new View(InputView, OutputView);
   #controller = new GameController(this.#model, this.#view);
 
