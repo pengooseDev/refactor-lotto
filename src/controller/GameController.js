@@ -10,12 +10,11 @@ class GameController {
   }
 
   startGame() {
-    this.#view.readMoneyInput(this.checkValidMoney.bind(this));
+    this.#view.readMoneyInput(this.checkMoneyValidation.bind(this));
   }
 
-  checkValidMoney(userInput) {
-    Console.close();
-    console.log(`input : ${userInput}`);
+  checkMoneyValidation(userInput) {
+    isValidMoney(userInput);
   }
 }
 

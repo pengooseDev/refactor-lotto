@@ -1,5 +1,5 @@
 const MESSAGE = Object.freeze({
-  INPUT: '값을 입력해주세요.',
+  INPUT: '구입금액을 입력해 주세요.',
 });
 
 const REGEX = Object.freeze({
