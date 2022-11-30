@@ -15,7 +15,11 @@ class GameController {
   }
 
   checkMoneyValidation(userInput) {
-    isValidMoney(userInput);
+    try {
+      isValidMoney(userInput);
+    } catch (error) {
+      this.#view.printError(error);
+    }
   }
 }
 

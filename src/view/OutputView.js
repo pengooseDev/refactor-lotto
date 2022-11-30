@@ -1,7 +1,9 @@
 const { Console } = require('@woowacourse/mission-utils');
 
 const OutputView = {
-  // print
+  printError(error) {
+    Console.print(error);
+  },
 };
 
 module.exports = OutputView;

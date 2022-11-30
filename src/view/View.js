@@ -10,6 +10,10 @@ class View {
   readMoneyInput(callback) {
     this.#inputView.readMoneyInput(callback);
   }
+
+  printError(error) {
+    this.#outputView.printError(error);
+  }
 }
 
 module.exports = View;
