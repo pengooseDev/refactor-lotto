@@ -15,6 +15,7 @@ class Lotto {
     const ticketScore = { ...LOTTO.DEFAULT_SCORE };
     tickets.forEach((ticket) => {
       const { count, getBonus } = this.matchNumbers(ticket);
+      if (count < LOTTO.THREE) return;
       if (getBonus && count === LOTTO.GET_FIVE)
         return (ticketScore[LOTTO.GET_FIVE_AND_BONUS].amount += LOTTO.COUNT_UNIT);
       return (ticketScore[count].amount += LOTTO.COUNT_UNIT);

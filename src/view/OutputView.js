@@ -1,5 +1,5 @@
 const { Console } = require('@woowacourse/mission-utils');
-const { ticketStringParser } = require('../utils/stringParser');
+const { ticketStringParser, totalPriceParser } = require('../utils/stringParser');
 const { TICKET, LOTTO_RESULT, LOTTO } = require('../utils/constants');
 
 const OutputView = {
@@ -19,11 +19,19 @@ const OutputView = {
   },
 
   printResult(ticketsResult) {
+    Console.print(LOTTO_RESULT.TITLE);
+    Console.print(LOTTO_RESULT.LINE);
     Console.print(LOTTO_RESULT.GET_THREE(ticketsResult[LOTTO.THREE].amount));
     Console.print(LOTTO_RESULT.GET_FOUR(ticketsResult[LOTTO.FOUR].amount));
     Console.print(LOTTO_RESULT.GET_FIVE(ticketsResult[LOTTO.FIVE].amount));
     Console.print(LOTTO_RESULT.GET_FIVE_AND_BONUS(ticketsResult[LOTTO.GET_FIVE_AND_BONUS].amount));
     Console.print(LOTTO_RESULT.GET_SIX(ticketsResult[LOTTO.SIX].amount));
+  },
+
+  printRevenueRate(ticketsResult, money) {
+    const revenueRate = totalPriceParser(ticketsResult, money);
+    Console.print(revenueRate);
+    Console.close();
   },
 };
 

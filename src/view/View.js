@@ -28,8 +28,9 @@ class View {
     this.#outputView.printTickets(tickets);
   }
 
-  printResult(ticketsResult) {
+  printResult(ticketsResult, money) {
     this.#outputView.printResult(ticketsResult);
+    this.#outputView.printRevenueRate(ticketsResult, money);
   }
 }
 

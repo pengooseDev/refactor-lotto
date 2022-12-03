@@ -45,19 +45,22 @@ const LOTTO = Object.freeze({
     6: { amount: 0, price: 30000000 },
     getFiveAndBonus: { amount: 0, price: 2000000000 },
   },
-  THREE: 3,
-  FOUR: 4,
+  THREE: '3',
+  FOUR: '4',
   FIVE: '5',
   GET_FIVE_AND_BONUS: 'getFiveAndBonus',
   SIX: '6',
 });
 
 const LOTTO_RESULT = Object.freeze({
+  TITLE: '당첨 통계',
+  LINE: '---',
   GET_THREE: (amount) => `3개 일치 (5,000원) - ${amount}개`,
   GET_FOUR: (amount) => `4개 일치 (50,000원) - ${amount}개`,
   GET_FIVE: (amount) => `5개 일치 (1,500,000원) - ${amount}개`,
   GET_FIVE_AND_BONUS: (amount) => `5개 일치, 보너스 볼 일치 (30,000,000원) - ${amount}개`,
   GET_SIX: (amount) => `6개 일치 (2,000,000,000원) - ${amount}개`,
+  TOTAL_REVENUE_RATE: (rate) => `총 수익률은 ${rate.toFixed(1)}%입니다.`,
 });
 
 module.exports = { MESSAGE, REGEX, NUMBER, ERROR, TICKET, LOTTO, LOTTO_RESULT };

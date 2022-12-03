@@ -3,6 +3,7 @@ const { isValidMoney, isValidLottoNumber, isValidBonusNumber } = require('../uti
 class GameController {
   #model;
   #view;
+  #money;
 
   constructor(model, view) {
     this.#model = model;
@@ -28,6 +29,7 @@ class GameController {
   }
 
   buyLotto(userInput) {
+    this.#money = userInput;
     this.#model.buyTickets(userInput);
     const tickets = this.#model.getTickets();
     this.#view.printTickets(tickets);
@@ -58,8 +60,13 @@ class GameController {
   }
 
   checkBonusValidation(userInput) {
-    isValidBonusNumber(userInput);
-    this.setBonusNumber(userInput);
+    try {
+      isValidBonusNumber(userInput);
+      this.setBonusNumber(userInput);
+    } catch (error) {
+      this.#view.printError(error);
+      this.readBonusNumber();
+    }
   }
 
   setBonusNumber(userInput) {
@@ -74,7 +81,7 @@ class GameController {
   }
 
   printResult(ticketsResult) {
-    this.#view.printResult(ticketsResult);
+    this.#view.printResult(ticketsResult, this.#money);
   }
 }
 
