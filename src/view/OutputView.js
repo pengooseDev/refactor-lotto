@@ -1,5 +1,5 @@
 const { Console } = require('@woowacourse/mission-utils');
-const { ticketStringParser } = require('../utils/stringParser');
+const { ticketStringParser, ticketResultParse } = require('../utils/stringParser');
 const { TICKET } = require('../utils/constants');
 
 const OutputView = {
@@ -16,6 +16,10 @@ const OutputView = {
 
   printTicketsAmount(tickets) {
     Console.print(TICKET.AMOUNT(tickets));
+  },
+
+  printResult(ticketsResult) {
+    Console.print(ticketsResult);
   },
 };
 

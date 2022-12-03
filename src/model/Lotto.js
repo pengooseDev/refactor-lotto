@@ -12,12 +12,15 @@ class Lotto {
   }
 
   checkTicketsResult(tickets) {
-    const ticketsResult = [];
+    const ticketScore = { ...LOTTO.DEFAULT_SCORE };
     tickets.forEach((ticket) => {
-      ticketsResult.push(this.matchNumbers(ticket));
+      const { count, getBonus } = this.matchNumbers(ticket);
+      if (getBonus && count === LOTTO.GET_FIVE)
+        return (ticketScore[LOTTO.GET_FIVE_AND_BONUS] += LOTTO.COUNT_UNIT);
+      return (ticketScore[count] += LOTTO.COUNT_UNIT);
     });
 
-    return ticketsResult;
+    return ticketScore;
   }
 
   matchNumbers(ticket) {

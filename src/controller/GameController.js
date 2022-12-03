@@ -70,6 +70,11 @@ class GameController {
   checkResult() {
     const tickets = this.#model.getTickets();
     const ticketsResult = this.#model.checkTicketsResult(tickets);
+    this.printResult(ticketsResult);
+  }
+
+  printResult(ticketsResult) {
+    this.#view.printResult(ticketsResult);
   }
 }
 

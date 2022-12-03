@@ -27,6 +27,10 @@ class View {
     this.#outputView.printTicketsAmount(tickets);
     this.#outputView.printTickets(tickets);
   }
+
+  printResult(ticketsResult) {
+    this.#outputView.printResult(ticketsResult);
+  }
 }
 
 module.exports = View;
