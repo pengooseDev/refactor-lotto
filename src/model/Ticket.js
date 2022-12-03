@@ -11,7 +11,8 @@ class Ticket {
   addTicket(amount) {
     while (this.#tickets.length < amount) {
       const ticket = this.createTicket();
-      this.#tickets.push(ticket);
+      const sortedTicket = this.sortTicket(ticket);
+      this.#tickets.push(sortedTicket);
     }
   }
 
@@ -21,6 +22,11 @@ class Ticket {
       NUMBER.LOTTO_RANGE_MAX,
       NUMBER.LOTTO_LENGTH,
     );
+  }
+
+  sortTicket(ticket) {
+    const sortedTicket = ticket.sort((a, b) => a - b);
+    return sortedTicket;
   }
 
   getTickets() {
