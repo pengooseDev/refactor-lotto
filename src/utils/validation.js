@@ -64,4 +64,10 @@ const isValidLottoNumber = (userInput) => {
   isValidRange(userInput);
 };
 
-module.exports = { isValidMoney, isValidLottoNumber };
+/* Bounus Number validation */
+const isValidBonusNumber = (userInput) => {
+  isNumber(userInput);
+  isValidRange(userInput);
+};
+
+module.exports = { isValidMoney, isValidLottoNumber, isValidBonusNumber };

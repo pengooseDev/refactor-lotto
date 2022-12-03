@@ -1,4 +1,4 @@
-const { isValidMoney, isValidLottoNumber } = require('../utils/validation');
+const { isValidMoney, isValidLottoNumber, isValidBonusNumber } = require('../utils/validation');
 
 class GameController {
   #model;
@@ -58,8 +58,11 @@ class GameController {
   }
 
   checkBonusValidation(userInput) {
-    console.log(userInput);
+    isValidBonusNumber(userInput);
+    this.checkResult();
   }
+
+  checkResult() {}
 }
 
 module.exports = GameController;
