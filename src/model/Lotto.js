@@ -5,7 +5,15 @@ class Lotto {
     this.#numbers = { main: numbers };
   }
 
-  // TODO: 추가 기능 구현
+  checkTicketsResult(tickets) {
+    const ticketsResult = [];
+    tickets.forEach((ticket) => {
+      ticketsResult.push(this.matchNumbers(ticket));
+    });
+    return ticketsResult;
+  }
+
+  matchNumbers(ticket) {}
 }
 
 module.exports = Lotto;
