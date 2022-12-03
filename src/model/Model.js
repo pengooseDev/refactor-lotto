@@ -22,6 +22,14 @@ class Model {
     console.log(lottoNumber);
     this.#Lotto = new Lotto(userInput);
   }
+
+  setBonusNumber(userInput) {
+    this.#Lotto.setBonusNumber(userInput);
+  }
+
+  checkTicketsResult(tickets) {
+    return this.#Lotto.checkTicketsResult(tickets);
+  }
 }
 
 module.exports = Model;

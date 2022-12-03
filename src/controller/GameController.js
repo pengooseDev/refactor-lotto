@@ -54,15 +54,23 @@ class GameController {
   }
 
   readBonusNumber() {
-    this.#view.readBounusNumber(this.checkBonusValidation.bind(this));
+    this.#view.readBonusNumber(this.checkBonusValidation.bind(this));
   }
 
   checkBonusValidation(userInput) {
     isValidBonusNumber(userInput);
+    this.setBonusNumber(userInput);
+  }
+
+  setBonusNumber(userInput) {
+    this.#model.setBonusNumber(Number(userInput));
     this.checkResult();
   }
 
-  checkResult() {}
+  checkResult() {
+    const tickets = this.#model.getTickets();
+    const ticketsResult = this.#model.checkTicketsResult(tickets);
+  }
 }
 
 module.exports = GameController;

@@ -31,4 +31,12 @@ const TICKET = Object.freeze({
   AMOUNT: (tickets) => `${tickets.length}개를 구매했습니다.`,
 });
 
-module.exports = { MESSAGE, REGEX, NUMBER, ERROR, TICKET };
+const LOTTO = Object.freeze({
+  DEFAULT_COUNT: 0,
+  DEFAULT_GET_BONUS: false,
+  DEFULAT_BONUS_NUMBER: 0,
+  COUNT_UNIT: 1,
+  GET_BONUS_TRUE: true,
+});
+
+module.exports = { MESSAGE, REGEX, NUMBER, ERROR, TICKET, LOTTO };
