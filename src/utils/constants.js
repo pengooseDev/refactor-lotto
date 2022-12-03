@@ -38,11 +38,21 @@ const LOTTO = Object.freeze({
   COUNT_UNIT: 1,
   GET_BONUS_TRUE: true,
   GET_FIVE: 5,
-  DEFAULT_SCORE: { 3: 0, 4: 0, 5: 0, 6: 0, getFiveAndBonus: 0 },
+  DEFAULT_SCORE: {
+    3: { amount: 0, price: 5000 },
+    4: { amount: 0, price: 50000 },
+    5: { amount: 0, price: 1500000 },
+    6: { amount: 0, price: 30000000 },
+    getFiveAndBonus: { amount: 0, price: 2000000000 },
+  },
+  THREE: 3,
+  FOUR: 4,
+  FIVE: '5',
   GET_FIVE_AND_BONUS: 'getFiveAndBonus',
+  SIX: '6',
 });
 
-const RESULT = Object.freeze({
+const LOTTO_RESULT = Object.freeze({
   GET_THREE: (amount) => `3개 일치 (5,000원) - ${amount}개`,
   GET_FOUR: (amount) => `4개 일치 (50,000원) - ${amount}개`,
   GET_FIVE: (amount) => `5개 일치 (1,500,000원) - ${amount}개`,
@@ -50,4 +60,4 @@ const RESULT = Object.freeze({
   GET_SIX: (amount) => `6개 일치 (2,000,000,000원) - ${amount}개`,
 });
 
-module.exports = { MESSAGE, REGEX, NUMBER, ERROR, TICKET, LOTTO, RESULT };
+module.exports = { MESSAGE, REGEX, NUMBER, ERROR, TICKET, LOTTO, LOTTO_RESULT };
